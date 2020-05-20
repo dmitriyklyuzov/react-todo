@@ -21,6 +21,12 @@ export class TodoItem extends Component {
             onChange={this.props.toggleComplete.bind(this, id)}
           />
           <span style={{ paddingLeft: "10px" }}>{title}</span>
+          <button
+            style={btnStyle}
+            onClick={this.props.deleteTodo.bind(this, id)}
+          >
+            x
+          </button>
         </p>
       </div>
     );
@@ -29,6 +35,17 @@ export class TodoItem extends Component {
 // PropTypes
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired,
+};
+
+// delete button style
+const btnStyle = {
+  backgroundColor: "red",
+  color: "white",
+  border: "none",
+  padding: "5px 8px",
+  borderRadius: "50%",
+  cursor: "pointer",
+  float: "right",
 };
 
 export default TodoItem;

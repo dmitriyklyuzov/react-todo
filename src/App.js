@@ -36,10 +36,22 @@ class App extends Component {
     });
   };
 
+  // Delete Todo item
+  deleteTodo = (id) => {
+    // return a new array of ids that don't match
+    this.setState({
+      todos: [...this.state.todos.filter((todo) => todo.id !== id)],
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <Todos todos={this.state.todos} toggleComplete={this.toggleComplete} />
+        <Todos
+          todos={this.state.todos}
+          toggleComplete={this.toggleComplete}
+          deleteTodo={this.deleteTodo}
+        />
       </div>
     );
   }
