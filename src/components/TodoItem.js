@@ -6,19 +6,26 @@ export class TodoItem extends Component {
     return {
       backgroundColor: "#f4f4f4",
       padding: "10px",
-      borderBottom: "1px #ccc dotted", 
+      borderBottom: "1px #ccc dotted",
       textDecoration: this.props.todo.completed ? "line-through" : "none",
     };
   };
+
   render() {
+    const { id, title } = this.props.todo;
     return (
       <div style={this.getStyle()}>
-        <p>{this.props.todo.title}</p>
+        <p>
+          <input
+            type="checkbox"
+            onChange={this.props.toggleComplete.bind(this, id)}
+          />
+          <span style={{ paddingLeft: "10px" }}>{title}</span>
+        </p>
       </div>
     );
   }
 }
-
 // PropTypes
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired,
