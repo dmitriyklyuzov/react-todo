@@ -1,3 +1,5 @@
+TODO App created with React using the [React JS Crash Course](https://www.youtube.com/watch?v=sBws8MSXN7A)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
