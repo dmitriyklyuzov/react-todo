@@ -1,18 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 import Todos from "./components/Todos";
 import "./App.css";
 
-class App extends React.Component {
+class App extends Component {
   state = {
     todos: [
       {
         id: 1,
-        title: "Take out the trash",
+        title: "Go for a run",
         completed: false,
       },
       {
         id: 2,
-        title: "Dinner with wife",
+        title: "Have dinner with wife",
         completed: false,
       },
       {
@@ -24,10 +24,9 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.todos);
     return (
       <div className="App">
-        <Todos />
+        <Todos todos={this.state.todos} />
       </div>
     );
   }
